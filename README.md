@@ -8,7 +8,7 @@ Chinese Text Correction (CTC) is to detect and correct errors in the text, which
 ## Method
 
 * #### GED (Peiyuan Gong) 
-    Use NER-based framework for GED task, which is a subtask of GEC, identifying different error start and end index. Here we use <INS>, <REP> and <DEL> three basic labels to represent `缺失`, `别字` and `冗余`。
+    Use NER-based framework for GED task, which is a subtask of GEC, identifying different error start and end index. Here we use `<INS>`, `<REP>` and `<DEL>` three basic labels to represent `缺失`, `别字` and `冗余`。
 * #### GEC-NAG (Yinghao Li)
 * #### GEC-AG (Haiming Wu)
 
