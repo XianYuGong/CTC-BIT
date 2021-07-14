@@ -22,6 +22,8 @@ def read_data(input_path):
             for line in tqdm(fr.readlines()):
                 line = line.strip('\n')
                 src, tgt = line.split('\t')
+                src = src.replace(' ', '')
+                tgt = tgt.replace(' ', '')
                 src_lst.append(src)
                 tgt_lst.append(tgt)
 
