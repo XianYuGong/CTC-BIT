@@ -13,8 +13,8 @@ def read_data(input_path):
         with open(input_path, 'r', encoding='utf8') as fr:
             for line in tqdm(fr.readlines()):
                 line = json.loads(line)
-                src = line['source'].strip('\n').strip()
-                tgt = line['target'].strip('\n').strip()
+                src = line['source'].strip('\n').strip().replace(' ', '')
+                tgt = line['target'].strip('\n').strip().replace(' ', '')
                 src_lst.append(src)
                 tgt_lst.append(tgt)
     elif suffix == 'txt':
@@ -49,6 +49,8 @@ def get_tag(src_lst, tgt_lst):
         tag_lst = ['O'] * len(src)
 
         for edit in edits:
+            if "。" in tgt[edit[3]:edit[4]]:  # rm 。
+                continue
             option, s_index, t_index = edit[0], edit[1], edit[2]
             if option == 'replace':
                 if tag_lst[s_index:t_index] == ['O'] * (t_index-s_index):
