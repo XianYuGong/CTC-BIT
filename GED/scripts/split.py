@@ -12,7 +12,7 @@ def main():
 
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
-        print(f'Make dir {args.output_dir}')
+        print(f'Make {args.output_dir} dir')
 
     with open(args.input_path, 'r', encoding='utf8') as fr, \
         open(f'{args.output_dir}/train_ged.json', 'w', encoding='utf8') as fw_train, \
